@@ -63,7 +63,41 @@ module.exports = {
 
             return this
         },
+        makeYourOwnPizza: function(make) {
+            this.api.useXpath()
+            this.waitForElementVisible(`//*[contains(text(),"${make}")]`, constants.timeout.medium)
+                .click(`//*[contains(text(),"${make}")]`);
 
+            this.api.useCss()
+            return this;
+
+        },
+        addCrustSize: function(crust) {
+            this.waitForElementVisible('[data-pizza-name="25cm NY style"]', constants.timeout.long)
+                .click(`[data-pizza-name="${crust}"]`);
+
+            return this;
+        },
+        addTopping: function(topping) {
+            this.waitForElementVisible(`[data-pizza-sauce-topping-name="${topping}"]`)
+                .click(`[data-pizza-sauce-topping-name="${topping}"]`);
+
+            return this;
+
+        },
+        addToppingIngredient: function(topping) {
+            this.waitForElementVisible(`[data-topping-name="${topping}"]`)
+                .click(`[data-topping-name="${topping}"]`);
+
+            return this;
+
+        },
+        addCustomPizzaToBasket: function() {
+            this.waitForElementVisible('.add-custompizza-product-button', constants.timeout.medium)
+                .click('.add-custompizza-product-button');
+
+            return this;
+        }
 
 
     })]
