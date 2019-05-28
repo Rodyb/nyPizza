@@ -1,0 +1,17 @@
+{
+  "name": "basebuild-nightwatch.tests",
+  "version": "0.1.0",
+  "description": "e2e tests for Vivante Health",
+  "repository": "",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "author": "Rody Bothe",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^2.46.0",
+    "nightwatch": "^0.9.21"
+  },
+  "dependencies": {},
+  "e2e": "BABEL_ENV=test node test/runner.js"
+}

@@ -1,0 +1,96 @@
+{
+  "src_folders": [
+    "tests"
+  ],
+  "output_folder": "reports",
+  "custom_commands_path": "commands",
+  "page_objects_path": "page_objects",
+  "custom_assertions_path": "",
+  "globals_path": "./globals.js",
+  "live_output": false,
+  "parallel_process_delay": 10,
+  "disable_colors": false,
+  "test_workers": false,
+  "reporter": "./html-reporter.js",
+  "selenium": {
+    "start_process": false,
+    "server_path": "",
+    "log_path": "",
+    "host": "127.0.0.1",
+    "port": 4444,
+    "cli_args": {
+    }
+  },
+  "test_settings": {
+    "default": {
+      "launch_url": "https://www.newyorkpizza.nl/",
+      "selenium_port": 9515,
+      "selenium_host": "localhost",
+      "silent": true,
+      "output": true,
+      "default_path_prefix": "",
+      "detailed_output": false,
+      "screenshots": {
+        "enabled": true,
+        "path": ""
+      },
+      "globals": {
+        "vivanteUserName": "rbothe+6@vivantehealth.com",
+        "vivantePassword": "Qwerty1!",
+        "vivanteUserNameDEV4": "rbothe+8@vivantehealth.com",
+        "vivantePasswordDEV4": "Qwerty1!",
+        "careTeamUserName": "vmanolas+dietitian1SSO@vivantehealth.com",
+        "careTeamPassword": "Merlin10",
+        "memberUserName": "thanvid92+vid31@gmail.com",
+        "memberPassword": "12345678Xx"
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "args":
+          [ "start-maximized"]
+        }
+      }
+    },
+    "localEnvironment": {
+      "launch_url": "http://welcome.vivantehealth.com",
+      "globals": {
+        "vivanteUserName": "rodybothe@gmail.com",
+        "vivantePassword": "Blowen85_",
+        "administrator_username": "SystemAdministrator",
+        "administrator_password": "secret"
+      }
+    },
+    "daily": {
+      "launch_url": "http://pfizerdaily.tst02.evision.local",
+      "globals": {
+        "evision_username": "evision",
+        "evision_password": "visionxs",
+        "administrator_username": "SystemAdministrator",
+        "administrator_password": "secret"
+      }
+    },
+    "mobileChrome": {
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "chromeOptions": {
+          "mobileEmulation": {
+            "deviceName": "Apple iPhone 5"
+          }
+        }
+      }
+    },
+    "chrome": {
+      "desiredCapabilities": {
+        "browserName": "chrome"
+      },
+      "ie": {
+        "desiredCapabilities": {
+          "browserName": "ie"
+        }
+      }
+    }
+  }
+}

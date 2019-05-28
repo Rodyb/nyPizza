@@ -1,0 +1,12 @@
+stages:
+- test
+
+nightwatch-test:
+  stage: test
+  image: dandersonacro/nightwatch
+  script:
+  - npm install
+  - npm test
+  tags:
+    - generic-docker-runner
+  when: manual
