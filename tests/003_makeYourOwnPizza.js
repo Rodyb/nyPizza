@@ -4,23 +4,19 @@ module.exports = {
             let mainMenu = browser.page.mainMenu();
             let arr = ['Shoarma', 'Hete Kip', 'Extra tomatensaus'];
 
+            //Work in progress, not finished.
+
             mainMenu
             .navigate()
             .setCookie()
             .makeYourOwnPizza('Stel zelf je pizza samen')
             .addCrustSize('35cm NY style')
-                .addTopping('Extra tomatensaus');
+                .addToppingIngredient('Hete Kip');
 
-                // .addToppingIngredient('Hete Kip')
-                // .addToppingIngredient('Jalapeño')
-            //     .addCustomPizzaToBasket();
-            //
-            //
-            // browser.expect.element('span.nyp-receipt-info.nyp-receipt-tooltip.pull-right').text.to.contain(arr);
-            //
+             browser.expect.element('span.nyp-receipt-info.nyp-receipt-tooltip.pull-right').text.to.contain(arr);
 
 
-        browser.pause();
+        browser.end();
     }
 
 };

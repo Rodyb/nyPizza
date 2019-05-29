@@ -4,9 +4,6 @@ Ideeen die ik tegen gekomen ben
 likely the menu is not often changed. This helps to Stabilise the test and don't need to hardcore values i.e. Product ID 298
 - Also due to the last named fact I had to create an IF/Else to make it more dynamic. But this means more unnesscary code
 
-
-
-
 ------------------
 SCENARIO 
 
@@ -14,11 +11,13 @@ SCENARIO
 (verifieer of het correcte product is toegevoegd, verifeer of alle menu knoppen aanwezig zijn
 2. Zoek naar een product 
 3. Verander de gewenste grootte van de pizza 
-
+4. Maak je eigen pizza (Work In Progress)
 
 ------------------
 Uitleg
 1. Het model is het Page object Model daarin heb ik alle functies gedefineerd, dit houdt in dat indien er flows, 
-wijzigen de tests alleen in het PO Model hoeven aangepast te worden
+wijzigen de tests alleen in het PO Model hoeven aangepast te worden en alles geupdate word.
 2. Elke stap valideert of bepaalde elementen aanwezig zijn 
-3. Elke stap doet asserts op specifiek gedefineerde elementen, indien element niet aanwezig, faalt de test. 
+3. Elke stap doet asserts op specifiek gedefineerde elementen, indien element niet aanwezig, faalt de test.
+4. Alles is geschreven met het DRY principle ( Don't Repeat Yourself)
+

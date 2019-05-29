@@ -10,8 +10,7 @@ module.exports = {
     commands: [utils.logWrapper({
         selectMenuItem: function(item) {
           this.waitForElementVisible(`[title="${item}"]`, constants.timeout.medium)
-              .click(`[title="${item}"]`)
-              //.api.assert.urlEquals(`https://www.newyorkpizza.nl/bestellen/${item}`);
+              .click(`[title="${item}"]`);
 
             return this;
         },
@@ -37,7 +36,6 @@ module.exports = {
                 this.api.execute(function() {
                     document.querySelector('[data-product-id="84"] [value="Bestellen"]').click()
                 });
-
             }
             if(pizzaType === 'Double Pepperoni'){
                 this.waitForElementVisible('[data-product-id="85"] [value="Bestellen"]', constants.timeout.medium);
@@ -94,23 +92,10 @@ module.exports = {
 
             return this;
         },
-        addTopping: function(topping) {
-            this.api.useCss();
-            this.waitForElementPresent('.modal-content.nyp-dt-zs-modal-content', constants.timeout.medium);
-            this.api.executeAsync(function() {
-                let sel = document.querySelector(`//*[@id="CustomPizza"]/div/div//*[contains(text(),"${topping}")]`);
-                    if(sel){
-                       sel.click()
-                }
-            });
-
-            return this;
-        },
         addToppingIngredient: function(topping) {
             this.api.useCss();
-            this.waitForElementPresent('.modal-content.nyp-dt-zs-modal-content', constants.timeout.medium);
-                this.api.useXpath();
-                this.click(`//*[@id="CustomPizza"]/div/div//*[contains(text(),"${topping}")]`);
+            this.waitForElementPresent('.modal-content.nyp-dt-zs-modal-content', constants.timeout.medium)
+                .click(`[data-topping-name="${topping}"]`);
 
             return this;
 

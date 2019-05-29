@@ -20,7 +20,6 @@ module.exports = {
                             pizzaInBasket = result.value;
                                  browser.assert.equal(pizzaInBasket, foundPizza);
                                  console.log(pizzaInBasket, foundPizza);
-
                                  done()
                             });
                         });
