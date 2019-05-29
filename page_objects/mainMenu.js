@@ -1,6 +1,6 @@
 const utils = require('./utils');
 const constants = require('./constants');
-
+let top = '';
 module.exports = {
     url: function () {
         return this.api.launchUrl;
@@ -11,7 +11,7 @@ module.exports = {
         selectMenuItem: function(item) {
           this.waitForElementVisible(`[title="${item}"]`, constants.timeout.medium)
               .click(`[title="${item}"]`)
-              .api.assert.urlEquals(`https://www.newyorkpizza.nl/bestellen/${item}`);
+              //.api.assert.urlEquals(`https://www.newyorkpizza.nl/bestellen/${item}`);
 
             return this;
         },
@@ -24,14 +24,14 @@ module.exports = {
 
         },
         assertMenuButtons: function(browser, fields) {
-            browser.waitForElementVisible('#main-content', constants.timeout.medium)
+            browser.waitForElementVisible('#main-content', constants.timeout.medium);
             for(let field of fields){
                 browser.assert.elementPresent(`[title="${field}"]`)
             }
 
             return this;
         },
-        selectAnyPizza: function(pizzaType, size){
+        selectAnyPizza: function(pizzaType){
             if(pizzaType === 'Margerita'){
                 this.waitForElementVisible('[data-product-id="84"] [value="Bestellen"]', constants.timeout.medium);
                 this.api.execute(function() {
@@ -44,13 +44,23 @@ module.exports = {
                 this.api.execute(function() {
                     document.querySelector('[data-product-id="85"] [value="Bestellen"]').click()
                 });
-
             }
             if(pizzaType === 'Margerita'){
                 this.waitForElementVisible('[data-product-id="94"] [value="Bestellen"]', constants.timeout.medium)
                     .click('[data-product-id="94"] [value="Bestellen"]');
                 return this.api.page.paymentModule()
             }
+            if(pizzaType === 'Meatlovers'){
+                this.waitForElementVisible('[data-product-id="202"] [value="Bestellen"]', constants.timeout.medium)
+                    .click('[data-product-id="202"] [value="Bestellen"]');
+                return this.api.page.paymentModule()
+            }
+            else if(pizzaType === 'Bianca') {
+                this.waitForElementVisible('[data-product-id="293"] [value="Bestellen"]')
+                    .click('[data-product-id="293"] [value="Bestellen"]');
+                return this.api.page.paymentModule()
+            }
+
             return this;
 
         },
@@ -63,18 +73,28 @@ module.exports = {
 
             return this
         },
+        setCookie: function(){
+            this.click('.nyp-close-cookie');
+
+            return this;
+        },
         makeYourOwnPizza: function(make) {
-            this.api.useXpath()
+            this.api.useXpath();
             this.waitForElementVisible(`//*[contains(text(),"${make}")]`, constants.timeout.medium)
                 .click(`//*[contains(text(),"${make}")]`);
 
-            this.api.useCss()
+            this.api.useCss();
+
             return this;
 
         },
         addCrustSize: function(crust) {
-            this.waitForElementVisible('[data-pizza-name="25cm NY style"]', constants.timeout.long)
-                .click(`[data-pizza-name="${crust}"]`);
+            let top = '[data-pizza-name="25cm NY style"]';
+
+            this.waitForElementVisible('[data-pizza-name="25cm NY style"]', constants.timeout.long);
+            this.api.execute(function() {
+                document.querySelector(top).click()
+            });
 
             return this;
         },
@@ -96,9 +116,22 @@ module.exports = {
             this.waitForElementVisible('.add-custompizza-product-button', constants.timeout.medium)
                 .click('.add-custompizza-product-button');
 
+
             return this;
-        }
+        },
+        searchForItem: function(value) {
+            this.waitForElementVisible('[name="SearchMenu"]', constants.timeout.medium )
+                .setValue('[name="SearchMenu"]', value)
+                .waitForElementVisible('#menu-search-result .nyp-product-decription .nyp-text-color-header', constants.timeout.medium);
 
+            return this;
+        },
+        addFoundItem: function() {
+            this.waitForElementVisible('.add-search-product-button', constants.timeout.medium)
+                .click('.add-search-product-button');
+                //.waitForElementVisible('.nyp-product-header .nyp-sm-header', constants.timeout.medium);
+            return this;
 
+        },
     })]
 };

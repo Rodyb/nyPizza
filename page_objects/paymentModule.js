@@ -62,7 +62,7 @@ module.exports = {
             return this;
         },
         assertCheckOutButtons: function(browser, fields) {
-            browser.waitForElementVisible(`#CustomerData_StreetNumber`, constants.timeout.medium)
+            browser.waitForElementVisible(`#CustomerData_StreetNumber`, constants.timeout.medium);
             for(let field of fields){
                 browser.assert.elementPresent(`#CustomerData_${field}`)
             }

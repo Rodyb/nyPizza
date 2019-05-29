@@ -3,7 +3,9 @@ module.exports = {
     'Verify it\'s possible to add Pizza to basket and verify all mandatory fields are present' : function (browser) {
         let mainMenu = browser.page.mainMenu();
         let validateMenuButtons = ['Pizza', 'Sandwiches', 'Hamburger', 'Salads', 'Pasta', 'Desserts', 'Dranken'];
-        let validateMandatoryFieldsCheckOut = ['Firstname', 'Lastname', 'Phonenumber', 'HouseNumber', 'ZipCode', 'Street'];
+        let validateMandatoryFieldsCheckOut = ['Firstname', 'Lastname', 'Phonenumber', 'StreetNumber', 'ZipCode', 'Street'];
+
+        //All Strings in the code can be edited to the needs, it's made dynamic
 
         mainMenu
             .navigate()
@@ -21,10 +23,10 @@ module.exports = {
                 .verifyStreetName()
                 .assertCheckOutButtons(browser, validateMandatoryFieldsCheckOut);
 
+        browser.expect.element('has-error').to.not.be.present;
 
 
-
-        browser.pause();
+        browser.end();
     }
 
 };
