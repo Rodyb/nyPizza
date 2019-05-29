@@ -8,11 +8,11 @@ module.exports = {
             .navigate()
             .setCookie()
             .makeYourOwnPizza('Stel zelf je pizza samen')
-            .addCrustSize('25cm NY style');
-            //     .addTopping('Extra tomatensaus')
-            //     .addToppingIngredient('Shoarma')
-            //     .addToppingIngredient('Hete Kip')
-            //     .addToppingIngredient('Jalapeño')
+            .addCrustSize('35cm NY style')
+                .addTopping('Extra tomatensaus');
+
+                // .addToppingIngredient('Hete Kip')
+                // .addToppingIngredient('Jalapeño')
             //     .addCustomPizzaToBasket();
             //
             //

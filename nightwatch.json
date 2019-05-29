@@ -35,14 +35,7 @@
         "path": ""
       },
       "globals": {
-        "vivanteUserName": "rbothe+6@vivantehealth.com",
-        "vivantePassword": "Qwerty1!",
-        "vivanteUserNameDEV4": "rbothe+8@vivantehealth.com",
-        "vivantePasswordDEV4": "Qwerty1!",
-        "careTeamUserName": "vmanolas+dietitian1SSO@vivantehealth.com",
-        "careTeamPassword": "Merlin10",
-        "memberUserName": "thanvid92+vid31@gmail.com",
-        "memberPassword": "12345678Xx"
+        "userName": "newUser"
       },
       "desiredCapabilities": {
         "browserName": "chrome",
@@ -50,7 +43,7 @@
         "acceptSslCerts": true,
         "chromeOptions": {
           "args":
-          [ "start-maximized"]
+          ["start-maximized"]
         }
       }
     },

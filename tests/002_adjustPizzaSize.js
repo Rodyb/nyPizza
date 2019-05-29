@@ -3,7 +3,7 @@ module.exports = {
         'Verify multiple sizes of Pizza' : function (browser) {
             let mainMenu = browser.page.mainMenu();
 
-            //it's possible to change the pizza size to any size you like
+            //It's possible to change the pizza size to any size you like
 
             mainMenu
             .navigate()
@@ -12,7 +12,6 @@ module.exports = {
 
         browser.expect.element('[data-product-id="293"]').text.to.contain('35cm NY style');
 
-        browser.end();
     }
 
 };

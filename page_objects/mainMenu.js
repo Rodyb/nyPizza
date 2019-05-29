@@ -82,32 +82,35 @@ module.exports = {
             this.api.useXpath();
             this.waitForElementVisible(`//*[contains(text(),"${make}")]`, constants.timeout.medium)
                 .click(`//*[contains(text(),"${make}")]`);
-
             this.api.useCss();
 
             return this;
 
         },
         addCrustSize: function(crust) {
-            let top = '[data-pizza-name="25cm NY style"]';
-
-            this.waitForElementVisible('[data-pizza-name="25cm NY style"]', constants.timeout.long);
-            this.api.execute(function() {
-                document.querySelector(top).click()
-            });
+            this.waitForElementPresent('.modal-content.nyp-dt-zs-modal-content', constants.timeout.medium);
+            this.api.useXpath();
+                this.click(`//*[@id="CustomPizza"]/div/div//*[contains(text(),"${crust}")]`);
 
             return this;
         },
         addTopping: function(topping) {
-            this.waitForElementVisible(`[data-pizza-sauce-topping-name="${topping}"]`)
-                .click(`[data-pizza-sauce-topping-name="${topping}"]`);
+            this.api.useCss();
+            this.waitForElementPresent('.modal-content.nyp-dt-zs-modal-content', constants.timeout.medium);
+            this.api.executeAsync(function() {
+                let sel = document.querySelector(`//*[@id="CustomPizza"]/div/div//*[contains(text(),"${topping}")]`);
+                    if(sel){
+                       sel.click()
+                }
+            });
 
             return this;
-
         },
         addToppingIngredient: function(topping) {
-            this.waitForElementVisible(`[data-topping-name="${topping}"]`)
-                .click(`[data-topping-name="${topping}"]`);
+            this.api.useCss();
+            this.waitForElementPresent('.modal-content.nyp-dt-zs-modal-content', constants.timeout.medium);
+                this.api.useXpath();
+                this.click(`//*[@id="CustomPizza"]/div/div//*[contains(text(),"${topping}")]`);
 
             return this;
 
@@ -115,7 +118,6 @@ module.exports = {
         addCustomPizzaToBasket: function() {
             this.waitForElementVisible('.add-custompizza-product-button', constants.timeout.medium)
                 .click('.add-custompizza-product-button');
-
 
             return this;
         },
@@ -128,8 +130,8 @@ module.exports = {
         },
         addFoundItem: function() {
             this.waitForElementVisible('.add-search-product-button', constants.timeout.medium)
-                .click('.add-search-product-button');
-                //.waitForElementVisible('.nyp-product-header .nyp-sm-header', constants.timeout.medium);
+                .click('.add-search-product-button')
+                .waitForElementPresent('.nyp-receipt-remove', constants.timeout.medium);
             return this;
 
         },
