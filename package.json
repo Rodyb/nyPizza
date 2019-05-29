@@ -1,7 +1,7 @@
 {
   "name": "basebuild-nightwatch.tests",
   "version": "0.1.0",
-  "description": "e2e tests for Vivante Health",
+  "description": "e2e test for Solutions 4 Delivery",
   "repository": "",
   "scripts": {
     "test": "nightwatch"

@@ -1,8 +1,8 @@
 module.exports = {
     tags: ['SearchForItem'],
         'Search for specific Pizza and add it to basket' : function (browser) {
-            let foundPizza, pizzaInBasket;
-            let mainMenu = browser.page.mainMenu();
+        let mainMenu = browser.page.mainMenu();
+        let foundPizza, pizzaInBasket;
 
             // the perform action is due to the async operation going on, the getText can't be verified unless I put it in a command cue
 
@@ -13,7 +13,7 @@ module.exports = {
                         browser.getText('css selector', '#menu-search-result .nyp-product-decription .nyp-text-color-header', function(result) {
                              foundPizza = result.value;
                                 console.log(foundPizza);
-                 });
+                             });
             mainMenu
             .addFoundItem();
                         browser.perform(function(browser, done){
@@ -23,10 +23,8 @@ module.exports = {
                                  console.log(pizzaInBasket, foundPizza);
                          done()
 
-                });
-            });
-
-
+                            });
+                        });
        browser.end();
     }
 

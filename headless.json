@@ -23,7 +23,7 @@
         "on_failure": true,
         "path": "screenshots"
       },
-      "launch_url" : "https://member-portal.env-dev3.vivantehealth.org",
+      "launch_url" : "",
       "selenium_port"  : 9515,
       "selenium_host"  : "localhost",
       "silent": true,
@@ -31,14 +31,6 @@
       "default_path_prefix": "",
       "detailed_output": false,
       "globals": {
-        "vivanteUserName": "rbothe+6@vivantehealth.com",
-        "vivantePassword": "Qwerty1!",
-        "vivanteUserNameDEV4": "rbothe+8@vivantehealth.com",
-        "vivantePasswordDEV4": "Qwerty1!",
-        "careTeamUserName": "vmanolas+dietitian1SSO@vivantehealth.com",
-        "careTeamPassword": "Merlin10",
-        "memberUserName": "thanvid92+vid31@gmail.com",
-        "memberPassword": "12345678Xx"
 
       },
       "desiredCapabilities": {
@@ -53,10 +45,7 @@
     },
     "localEnvironment": {
       "globals": {
-        "evision_username": "evision",
-        "evision_password": "visionxs",
-        "administrator_username" : "SystemAdministrator",
-        "administrator_password" : "secret"
+
       }
     },
     "chrome" : {

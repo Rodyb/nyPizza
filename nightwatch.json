@@ -48,21 +48,21 @@
       }
     },
     "localEnvironment": {
-      "launch_url": "http://welcome.vivantehealth.com",
+      "launch_url": "",
       "globals": {
-        "vivanteUserName": "rodybothe@gmail.com",
-        "vivantePassword": "Blowen85_",
-        "administrator_username": "SystemAdministrator",
-        "administrator_password": "secret"
+        "vivanteUserName": "",
+        "vivantePassword": "",
+        "administrator_username": "",
+        "administrator_password": ""
       }
     },
     "daily": {
-      "launch_url": "http://pfizerdaily.tst02.evision.local",
+      "launch_url": "",
       "globals": {
-        "evision_username": "evision",
-        "evision_password": "visionxs",
-        "administrator_username": "SystemAdministrator",
-        "administrator_password": "secret"
+        "evision_username": "",
+        "evision_password": "",
+        "administrator_username": "",
+        "administrator_password": ""
       }
     },
     "mobileChrome": {
