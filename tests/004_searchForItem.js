@@ -3,7 +3,6 @@ module.exports = {
         'Search for specific Pizza and add it to basket' : function (browser) {
         let mainMenu = browser.page.mainMenu();
         let foundPizza, pizzaInBasket;
-
             // the perform action is due to the async operation going on, the getText can't be verified unless I put it in a command cue
 
             mainMenu
@@ -21,8 +20,8 @@ module.exports = {
                             pizzaInBasket = result.value;
                                  browser.assert.equal(pizzaInBasket, foundPizza);
                                  console.log(pizzaInBasket, foundPizza);
-                         done()
 
+                                 done()
                             });
                         });
        browser.end();
