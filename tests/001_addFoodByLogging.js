@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 module.exports = {
     tags: ['addPizzaToBasket'],
     'Verify it\'s possible to add Pizza to basket and verify all mandatory fields are present' : function (browser) {

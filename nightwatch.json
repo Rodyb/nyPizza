@@ -32,7 +32,9 @@
       "detailed_output": false,
       "screenshots": {
         "enabled": true,
-        "path": ""
+        "path": "./reports",
+        "on_failure": true,
+        "on_error": true
       },
       "globals": {
         "userName": "newUser"
